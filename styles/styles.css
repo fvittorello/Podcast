@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,500|IBM+Plex+Sans:400,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+main {
+    padding: 0 16px;
+}
+
+nav {
+    height: 44px;
+    padding: 10px 0;
+    background-color: #FFF;
+    position: relative;
+}
+
+.Logo{
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+    position: relative;
+    left: 0px;
+}
+
+label {
+    position: absolute;
+    right: 0px;
+    margin-right: 16px;
+}
+
+#ToggleButton {
+    display: none;
+}
+
+.desplegable{
+    visibility: collapse;
+    background-color: #0000EC;
+}
+
+.desplegable a {
+    color: #FFF;
+    font-family: "IBM Plex Mono";
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 28px;
+    padding-left: 16px;
+}
+
+.desplegable li {
+    height: 56px;
+    line-height: 56px;
+}
+
+#ToggleButton:checked ~ .desplegable {
+    visibility: visible;
+}
+
+h1 {
+    color: #060A24;
+    font-family: "IBM Plex Sans";
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 16px;
+}
+
+h2 {
+    color: #060A24;
+    font-family: "IBM Plex Sans";
+    font-weight: 400;
+    font-size: 36px;
+    
+    margin-bottom: 21px;
+}
+
+h3 {
+    color: #060A24;
+    font-family: "IBM Plex Sans";
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+}
+
+p {
+    color: #060A24;
+    font-family: "IBM Plex Mono";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.textoInicial {
+    margin-bottom: 36px;
+}
+
+.tachado {
+    text-decoration: line-through;
+    font-style: normal;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 96px;
+    background-color: #00F3BB;
+    color: #060A24;
+    font-family: "IBM Plex Mono";
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.button:hover {
+    background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+    color: #FFF;
+    font-family: "IBM Plex Mono";
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.ImgMobile {
+    max-width: 457.6px;
+    max-height: 660px;
+}
+
+#topicos div {
+    margin-bottom: 52px;
+}
+
+#topicos div img {
+    display: flex;
+    height: 104px;
+    width: 104px;
+    margin: auto;
+}
+
+footer {
+    background-color: #FFF;
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    justify-content: space-around;
+}
+
+footer ul li{
+    display: inline-flex;
+    justify-content: space-evenly;
+    color: #060A24;
+    width: 16px;
+}
