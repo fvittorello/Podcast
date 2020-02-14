@@ -19,46 +19,11 @@ nav {
     position: relative;
 }
 
-.Logo{
-    width: 24px;
-    height: 24px;
-    margin-left: 16px;
-    position: relative;
-    left: 0px;
-}
 
 label {
     position: absolute;
     right: 0px;
     margin-right: 16px;
-}
-
-#ToggleButton {
-    display: none;
-}
-
-.desplegable{
-    visibility: collapse;
-    background-color: #0000EC;
-}
-
-.desplegable a {
-    color: #FFF;
-    font-family: "IBM Plex Mono";
-    font-weight: 400;
-    font-size: 16px;
-    text-decoration: none;
-    line-height: 28px;
-    padding-left: 16px;
-}
-
-.desplegable li {
-    height: 56px;
-    line-height: 56px;
-}
-
-#ToggleButton:checked ~ .desplegable {
-    visibility: visible;
 }
 
 h1 {
@@ -95,11 +60,57 @@ p {
     font-size: 14px;
 }
 
+footer {
+    background-color: #FFF;
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    justify-content: space-around;
+}
+
+.nav__toggleButton {
+    display: none;
+}
+
+.nav__logo{
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+    position: relative;
+    left: 0px;
+}
+
+.nav__desplegable{
+    visibility: collapse;
+    background-color: #0000EC;
+}
+
+.nav__linkButton {
+    color: #FFF;
+    font-family: "IBM Plex Mono";
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 28px;
+    padding-left: 16px;
+}
+
+.nav__li {
+    height: 56px;
+    line-height: 56px;
+}
+
+.nav__toggleButton:checked ~ .nav__desplegable {
+    visibility: visible;
+}
+
+
+
 .textoInicial {
     margin-bottom: 36px;
 }
 
-.tachado {
+.h1__lineThrough {
     text-decoration: line-through;
     font-style: normal;
 }
@@ -118,36 +129,25 @@ p {
 .button:hover {
     background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
     color: #FFF;
-    font-family: "IBM Plex Mono";
-    font-weight: 400;
-    font-size: 18px;
 }
 
-.ImgMobile {
+.nosotros__img {
     max-width: 457.6px;
     max-height: 660px;
 }
 
-#topicos div {
+.topicos__item {
     margin-bottom: 52px;
 }
 
-#topicos div img {
+.item__img {
     display: flex;
     height: 104px;
     width: 104px;
     margin: auto;
 }
 
-footer {
-    background-color: #FFF;
-    display: flex;
-    height: 50px;
-    line-height: 50px;
-    justify-content: space-around;
-}
-
-footer ul li{
+.redesSociales__li{
     display: inline-flex;
     justify-content: space-evenly;
     color: #060A24;

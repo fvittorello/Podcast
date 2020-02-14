@@ -15,8 +15,8 @@
     <title>Pale Blue Dot</title>
 </head>
 <body>
-    <nav class="containerNav">
-        <svg class="Logo" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <nav class="nav">
+        <svg class="nav__logo" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <title>Pale Blue Dot Logo</title>
             <desc>Pale Blue Dot Logo</desc>
             <defs>
@@ -44,19 +44,19 @@
             <i class="fas fa-bars IconoMenu"></i>
             <!--<i class="fas fa-times IconoMenu"></i>-->
         </label>
-        <input type="checkbox" id="ToggleButton">
+        <input type="checkbox" id="ToggleButton" class="nav__toggleButton">
         
-        <ul class="desplegable">
-            <li><a href="#episodios">EPISODIOS</a></li>
-            <li><a href="#nosotros">NOSOTROS</a></li>
-            <li><a href="#entrevistas">ENTREVISTAS</a></li>
-            <li><a href="#topicos">TÓPICOS</a></li>
+        <ul class="nav__desplegable">
+            <li class="nav__li"><a href="#episodios" class="nav__linkButton">EPISODIOS</a></li>
+            <li class="nav__li"><a href="#nosotros" class="nav__linkButton">NOSOTROS</a></li>
+            <li class="nav__li"><a href="#entrevistas" class="nav__linkButton">ENTREVISTAS</a></li>
+            <li class="nav__li"><a href="#topicos" class="nav__linkButton">TÓPICOS</a></li>
         </ul>
     </nav>
 
     <main>
         <header id="inicio">
-            <h1>Hello <i class="tachado">world</i> pale blue dot.</h1>
+            <h1>Hello <i class="h1__lineThrough">world</i> pale blue dot.</h1>
             <p class="textoInicial">El portal de podcast que explora el mundo de la programación y 
             la tecnología, todos los jueves cada 15 días.
             </p>
@@ -64,56 +64,56 @@
             <a href="#"><div class="button">CONOCÉ MÁS</div></a>
         </header>
 
-        <section id="episodios">
+        <section id="episodios" class="episodios">
             <h2>Episodios</h2>
-            <img src="images/embed1_.png" alt="episodio 1">
-            <img src="images/embed2_.png" alt="episodio 2">
-            <img src="images/embed3_.png" alt="episodio 3">
-            <img src="images/embed4_.png" alt="episodio 4">
+            <img src="images/embed1_.png" class="episodios__img" alt="episodio 1">
+            <img src="images/embed2_.png" class="episodios__img" alt="episodio 2">
+            <img src="images/embed3_.png" class="episodios__img" alt="episodio 3">
+            <img src="images/embed4_.png" class="episodios__img" alt="episodio 4">
         </section>
 
-        <section id="nosotros">
-            <img class="ImgMobile" src="images/phone.png" alt="The secret story of women in coding">
+        <section id="nosotros" class="nosotros">
+            <img class="nosotros__img" src="images/phone.png" alt="The secret story of women in coding" title="The secret story of women in coding">
             <h2>De dónde venimos</h2>
             <p>Our planet is a lonely speck in the great enveloping cosmic dark. 
             In our obscurity, in all this vastness, there is no hint that help will 
             come from elsewhere to save us from ourselves.</p>
         </section>
 
-        <section id="entrevistas">
+        <section id="entrevistas" class="entrevistas">
             <h2>Invitadas/os estelares</h2>
-            <img src="images/grace-hopper.png" alt="Grace Hopper">
-            <img src="images/Katie-Bouman.png" alt="Katie Bouman">
-            <img src="images/Margaret_Hamilton.png" alt="Margaret Hamilton">
-            <img src="images/An E.R.A.Univac 1103 computer in the 1950s.png" alt="An E.R.A.Univac 1103 computer in the 1950s">
-            <img src="images/Computer operators with an Eniac — the world’s first programmable general-purpose computer.png" alt="Computer operators with an Eniac — the world’s first programmable general-purpose computer">
-            <img src="images/susan-kare.png" alt="Susan Kare">
+            <img src="images/grace-hopper.png" alt="Grace Hopper" title="Grace Hopper">
+            <img src="images/Katie-Bouman.png" alt="Katie Bouman" title="Katie Bouman">
+            <img src="images/Margaret_Hamilton.png" alt="Margaret Hamilton" title="Margaret Hamilton">
+            <img src="images/An E.R.A.Univac 1103 computer in the 1950s.png" alt="An E.R.A.Univac 1103 computer in the 1950s" title="An E.R.A.Univac 1103 computer in the 1950s">
+            <img src="images/Computer operators with an Eniac — the world’s first programmable general-purpose computer.png" alt="Computer operators with an Eniac — the world’s first programmable general-purpose computer" title="Computer operators with an Eniac">
+            <img src="images/susan-kare.png" alt="Susan Kare" title="Susan Kare">
         </section>
 
-        <section id="topicos">
+        <section id="topicos" class="topicos">
             <h2>Algunos de nuestros temas</h2>
-            <div>
-                <img src="images/icon1.svg" alt="Trabajo Remoto">
+            <div class="topicos__item">
+                <img src="images/icon1.svg" class="item__img" alt="Trabajo Remoto">
                 <h3>Trabajo Remoto</h3>
             </div>
 
-            <div>
-                <img src="images/icon2.svg" alt="Repensando la programación">
+            <div class="topicos__item">
+                <img src="images/icon2.svg" class="item__img" alt="Repensando la programación">
                 <h3>Repensando la<br>programación</h3>
             </div>
 
-            <div>
-                <img src="images/icon3.svg" alt="Bases de código">
+            <div class="topicos__item">
+                <img src="images/icon3.svg" class="item__img" alt="Bases de código">
                 <h3>Bases de código</h3>
             </div>
 
-            <div>
-                <img src="images/icon4.svg" alt="Seguridad informática">
+            <div class="topicos__item">
+                <img src="images/icon4.svg" class="item__img" alt="Seguridad informática">
                 <h3>Seguridad<br>informática</h3>
             </div>
         </section>
 
-        <section id="novedades">
+        <section id="novedades" class="novedades">
             <h2>¿Querés las últimas novedades?</h2>
             <a href="#"><div class="button">ESCUCHÁ LOS EPISODIOS</div></a>
         </section>
@@ -121,11 +121,11 @@
         <footer>
             <p>&copy 2019— Hello blue pale dot</p>
             <ul class="RedesSociales">
-                <li><a href="spotify.com" target="_blank"><i class="fab fa-spotify"></i></a></li>
-                <li><a href="instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="telegram.com" target="_blank"><i class="fab fa-telegram"></i></a></li>
+                <li class="redesSociales__li"><a href="http://spotify.com" target="_blank"><i class="fab fa-spotify"></i></a></li>
+                <li class="redesSociales__li"><a href="http://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li class="redesSociales__li"><a href="http://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li class="redesSociales__li"><a href="http://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li class="redesSociales__li"><a href="http://telegram.com" target="_blank"><i class="fab fa-telegram"></i></a></li>
             </ul>
         </footer>
     </main>
