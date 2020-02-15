@@ -9,16 +9,26 @@
 }
 
 main {
-    padding: 0 16px;
+    padding-top: 29px;
+}
+
+body {
+    overflow: auto;
+    min-height: 100vh;
 }
 
 nav {
     height: 44px;
-    padding: 10px 0;
     background-color: #FFF;
-    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 10px 0;
 }
 
+section, header {
+    padding: 0 16px;
+}
 
 label {
     position: absolute;
@@ -36,15 +46,18 @@ h1 {
 }
 
 h2 {
+    width: 288px;
     color: #060A24;
     font-family: "IBM Plex Sans";
     font-weight: 400;
     font-size: 36px;
-    
+    line-height: 42px;    
     margin-bottom: 21px;
 }
 
 h3 {
+    margin: auto;
+    width: 288px;
     color: #060A24;
     font-family: "IBM Plex Sans";
     font-weight: 600;
@@ -58,13 +71,20 @@ p {
     font-family: "IBM Plex Mono";
     font-weight: 400;
     font-size: 14px;
+    line-height: 22px;
+}
+
+a:visited {
+    color: #060A24;
 }
 
 footer {
     background-color: #FFF;
     display: flex;
-    height: 50px;
+    height: 121px;
     line-height: 50px;
+    align-items: center;
+    flex-direction: column;
     justify-content: space-around;
 }
 
@@ -95,6 +115,15 @@ footer {
     padding-left: 16px;
 }
 
+.nav__linkButton:hover {
+    text-decoration: line-through;
+    color: #00F3BB;
+}
+
+.nav__linkButton::selection {
+    text-decoration: line-through;
+}
+
 .nav__li {
     height: 56px;
     line-height: 56px;
@@ -103,8 +132,6 @@ footer {
 .nav__toggleButton:checked ~ .nav__desplegable {
     visibility: visible;
 }
-
-
 
 .textoInicial {
     margin-bottom: 36px;
@@ -116,13 +143,17 @@ footer {
 }
 
 .button {
-    display: inline-block;
-    padding: 13px 96px;
+    width: 288px;
+    height: 48px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 13px 0;
     background-color: #00F3BB;
     color: #060A24;
     font-family: "IBM Plex Mono";
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 16px;
     margin-bottom: 24px;
 }
 
@@ -131,25 +162,123 @@ footer {
     color: #FFF;
 }
 
+.episodios {
+    padding-top: 64px;
+    background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+    clip-path: polygon(
+        0 calc(5vw),
+        0 100%,
+        100% calc(100% - 5vw),
+        100% 0);
+    padding-bottom: 143.5px;
+}
+
+.episodios__container {
+    height: 961px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nosotros {
+    padding: 0;
+    margin-top: -115.5px;
+}
+
+.nosotros__content {
+    padding: 0 16px;
+}
+
 .nosotros__img {
-    max-width: 457.6px;
-    max-height: 660px;
+    width: 360px;
+    position: relative;
+    padding: 27px;
+}
+
+.nosotros__text {
+    padding: 0 16px 22px 16px;
+}
+
+.section__title--secundary {
+    color: #FFF;
+}
+
+.entrevistas {
+    padding: 0;
+}
+
+.entrevistas__title {
+    padding: 32px 16px 0 16px;
+    margin-bottom: 14px;
+}
+
+.entrevistas__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.entrevistas__img {
+    max-width: 100vw;
+}
+
+.topicos {
+    margin-top: 48px;
+}
+
+.topicos__title {
+    padding-bottom: 24px;
+    width: 288px;
+}
+
+.topicos__container {
+    height: 932px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 42px;
 }
 
 .topicos__item {
-    margin-bottom: 52px;
+    
 }
 
 .item__img {
     display: flex;
     height: 104px;
     width: 104px;
-    margin: auto;
+    margin: 13px auto;
 }
 
-.redesSociales__li{
-    display: inline-flex;
-    justify-content: space-evenly;
-    color: #060A24;
-    width: 16px;
+.novedades {
+height: 341px;
+padding-top: 64px;
+background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+clip-path: polygon(
+    0 calc(10vw),
+    0 100%,
+    100% 100%,
+    100% 0
+    );
+}
+    
+.novedades__title {
+    width: 288px;
+    margin: auto;
+    margin-bottom: 36px;
+    text-align: center;
+}
+
+.socials {
+height: 28px;
+display: flex;
+color: #060A24;
+justify-content: center;
+}
+
+.socials__ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 227px;
 }
