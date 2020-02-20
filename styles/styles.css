@@ -23,17 +23,24 @@ nav {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    padding: 10px 0;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
 }
 
 section, header {
     padding: 0 16px;
 }
 
-label {
-    position: absolute;
-    right: 0px;
+.label {
     margin-right: 16px;
+    display: flex;
+    width: 16px;
+    height: 16px;
+    background-image: url("../images/bars-solid.svg");
 }
 
 h1 {
@@ -96,13 +103,14 @@ footer {
     width: 24px;
     height: 24px;
     margin-left: 16px;
-    position: relative;
-    left: 0px;
+    
 }
 
 .nav__desplegable{
-    visibility: collapse;
+    display: none;
     background-color: #0000EC;
+    flex-direction: column;
+    width: 100vw;
 }
 
 .nav__linkButton {
@@ -113,6 +121,14 @@ footer {
     text-decoration: none;
     line-height: 28px;
     padding-left: 16px;
+}
+
+.nav__linkButton:visited {
+    color: #FFF;
+}
+
+.nav__linkButton:active {
+    color: rgba(6, 10, 36, 0.56);
 }
 
 .nav__linkButton:hover {
@@ -130,8 +146,16 @@ footer {
 }
 
 .nav__toggleButton:checked ~ .nav__desplegable {
-    visibility: visible;
+    position: absolute;
+    top: 40px;
+    display: flex;
 }
+
+/*.nav__toggleButton:checked ~ .label {
+    background-image: none;
+    background-color: red;
+    height: 500px;
+}*/
 
 .textoInicial {
     margin-bottom: 36px;
@@ -190,6 +214,8 @@ footer {
 }
 
 .nosotros__img {
+    display: flex;
+    justify-self: center;
     width: 360px;
     position: relative;
     padding: 27px;
@@ -281,4 +307,38 @@ justify-content: center;
     justify-content: space-between;
     align-items: center;
     width: 227px;
+}
+
+@media screen and (min-width:768px) {
+
+.label {
+    display: none;
+}
+
+.nav__toggleButton {
+    display: none;
+}
+
+.nav__desplegable {
+    flex-direction: row;
+    background: none;
+    color: #060A24;
+    top: 0px !important; /* CHEQUEAR MEJORES METODOS PARA RESETEAR POSICION */
+    justify-content: flex-end;
+    padding-right: 16px;
+
+}
+
+.nav__linkButton {
+    color: #060A24;
+}
+
+.nav__linkButton:visited {
+    color: #060A24;
+}
+
+.nav__linkButton:hover {
+    color: #00F3BB;
+}
+
 }
