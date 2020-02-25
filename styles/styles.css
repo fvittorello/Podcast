@@ -35,13 +35,6 @@ section, header {
     padding: 0 16px;
 }
 
-.label {
-    margin-right: 16px;
-    display: flex;
-    width: 16px;
-    height: 16px;
-    background-image: url("../images/bars-solid.svg");
-}
 
 h1 {
     color: #060A24;
@@ -145,17 +138,24 @@ footer {
     line-height: 56px;
 }
 
+.label {
+    margin-right: 16px;
+    display: flex;
+    width: 16px;
+    height: 16px;
+    background: no-repeat center;
+    background-image: url("../images/bars-solid.svg");
+}
+
 .nav__toggleButton:checked ~ .nav__desplegable {
     position: absolute;
     top: 40px;
     display: flex;
 }
 
-/*.nav__toggleButton:checked ~ .label {
-    background-image: none;
-    background-color: red;
-    height: 500px;
-}*/
+.nav__toggleButton:checked ~ .label {
+    background-image: url("../images/times-solid.svg");
+}
 
 .textoInicial {
     margin-bottom: 36px;
@@ -264,9 +264,9 @@ footer {
     margin-bottom: 42px;
 }
 
-.topicos__item {
+/*.topicos__item {
     
-}
+}*/
 
 .item__img {
     display: flex;
