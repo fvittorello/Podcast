@@ -1,15 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,500|IBM+Plex+Sans:400,600&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-}
-
-main {
-    padding-top: 29px;
 }
 
 body {
@@ -74,8 +68,13 @@ p {
     line-height: 22px;
 }
 
-a:visited {
+a, a:visited {
     color: #060A24;
+}
+
+iframe {
+    width: 298px;
+    height: 225px;
 }
 
 footer {
@@ -86,6 +85,11 @@ footer {
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
+    padding: 10px 0;
+}
+
+.section__inicio {
+    padding-top: 29px;
 }
 
 .nav__toggleButton {
@@ -95,6 +99,7 @@ footer {
 .nav__logo{
     width: 24px;
     height: 24px;
+    justify-self: flex-start;
     margin-left: 16px;
     
 }
@@ -113,7 +118,7 @@ footer {
     font-size: 16px;
     text-decoration: none;
     line-height: 28px;
-    padding-left: 16px;
+    margin-left: 16px;
 }
 
 .nav__linkButton:visited {
@@ -147,10 +152,15 @@ footer {
     background-image: url("../images/bars-solid.svg");
 }
 
-.nav__toggleButton:checked ~ .nav__desplegable {
-    position: absolute;
-    top: 40px;
-    display: flex;
+
+@media screen and (max-width:767px) {
+
+    .nav__toggleButton:checked ~ .nav__desplegable {
+        position: absolute;
+        top: 40px;
+        display: flex;
+    }
+
 }
 
 .nav__toggleButton:checked ~ .label {
@@ -197,12 +207,23 @@ footer {
     padding-bottom: 143.5px;
 }
 
+
 .episodios__container {
-    height: 961px;
+    margin: auto;
+    max-width: 80%;
+    height: auto;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-between;
+    align-content: space-between;
 }
+
+.episodios__container iframe {
+    height: auto;
+    margin-bottom: 11px;
+}
+
 
 .nosotros {
     padding: 0;
@@ -219,6 +240,7 @@ footer {
     width: 360px;
     position: relative;
     padding: 27px;
+    margin: 0 auto;
 }
 
 .nosotros__text {
@@ -244,7 +266,7 @@ footer {
 }
 
 .entrevistas__img {
-    max-width: 100vw;
+    width: 100vw;
 }
 
 .topicos {
@@ -264,9 +286,6 @@ footer {
     margin-bottom: 42px;
 }
 
-/*.topicos__item {
-    
-}*/
 
 .item__img {
     display: flex;
@@ -311,6 +330,17 @@ justify-content: center;
 
 @media screen and (min-width:768px) {
 
+nav {
+    height: 80px;
+}
+
+.nav__logo {
+    width: 36px;
+    height: 36px;
+    margin-left: 100px;
+    align-self: center;
+}
+
 .label {
     display: none;
 }
@@ -320,12 +350,14 @@ justify-content: center;
 }
 
 .nav__desplegable {
+    display: flex;
     flex-direction: row;
     background: none;
     color: #060A24;
-    top: 0px !important; /* CHEQUEAR MEJORES METODOS PARA RESETEAR POSICION */
+    top: 0px;
     justify-content: flex-end;
-    padding-right: 16px;
+    margin-right: 100px;
+    width: auto;
 
 }
 
@@ -339,6 +371,51 @@ justify-content: center;
 
 .nav__linkButton:hover {
     color: #00F3BB;
+}
+
+.section__inicio {
+    padding-top: 120px;
+    height: 369px;
+}
+
+.episodios {
+    height: 1043px;
+    padding-top: 186px;
+    padding-bottom: 233px;
+}
+
+.episodios__container {
+    display: flex;
+    height: 536px;
+    width: 1240px;
+
+    margin: auto;
+    max-width: 90%;
+
+
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.episodios__container iframe:nth-child(2n+1) {
+    padding: 0;
+}
+
+.episodios__container iframe:nth-child(2n) {
+    padding: 0;
+}
+
+iframe {
+    max-width: 50%;
+    width: 100%;
+    height: 232px;
+}
+
+.nosotros {
+    height: 555px;
+    padding-bottom: 64px;
 }
 
 }
