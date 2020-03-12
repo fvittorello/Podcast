@@ -29,6 +29,12 @@ section, header {
     padding: 0 16px;
 }
 
+iframe {
+    width: 100%;
+    height: 232px;
+    border: 0;
+}
+
 
 h1 {
     color: #060A24;
