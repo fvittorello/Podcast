@@ -1,0 +1,140 @@
+images/
+	No tiraría las imágenes así sueltas, ordenaría/nombraría más prolijo (más que nada porque es un proyecto para mostrar)
+	la carpeta le pondría `assets` y ahí dentro `img/` `icons/` etc, es como la convención
+	`thumbs.db` volarlo a la verga y `pbdfavicon.ico` ponerle `favicon.ico` me parece tmb convención
+	svg tmb a otra carpeta
+	`favicon_io.zip` BYE
+	sacaría las imágenes de los podcast de la carpeta porque los vas a incrustar con iframe para que sean funcionales, tendrías assets de más que no se usan
+	
+Hacete un archivo `.gitignore`, ahí le ponés las rutas de todo lo que querés que git NO trackee y levante.
+Yo lo que hago para mantener todo ordenado es crear una carpeta que sea tipo "resources" y esa la agrego al .gitignore (pones una linea que diga `resources` y te va a ignorar la carpeta. Ese archivo tiene que estár en el root de la carpeta (donde está el index y eso)
+
+styles/
+	que onda que tenes brands y fontawesome css bajados? tmb tenés linkeado por CDN, son necesarias esas hojas de estilo? si se pueden evitar las evitaría, sino yafu.
+
+completá el readme.md que va a ser la carta de presnetación del proyecto, está bien que pora ahora esté tranca pero para que lo tengas presente ;)
+
+a considerar, todo lo que pongas en el `<head>` es bloqueante, si no carga va a ralentizar la carga general de tu pantalla, los scripts tengo entendido que la buena práctica es ponerlos al final del body salvo que éste específicamente pidan ponerlo antes
+
+tenés raro el BEM, siempre deberían heredar el nombre de la clase anterior, sino no es BEM y perdés un poco los beneficios tmb de la escritura (a nivel funcional está bien) pero si escribieras en SASS no podrías "anidar" las clases como se hace y estarías escribiendo más al pedo
+
+por ej el arbol debería ser:
+```
+nav
+nav__logo
+nav__logo__img
+nav__desplegable 
+nav__desplegable__item (ponerle li lo ata a un elemento/tag, está bueno que sean descriptivos los nombres de qué rol cumplen, bajo ese mismo criterio le cambiaría el desplegable por otra cosa porque no siempre es desplegable)
+```
+
+Otra cosa importante, consistencia de lenguaje, si vas a hacer el código en inglés, que TODO sea en inglés, clases, IDs, comments, etc. Distinto es el CONTENIDO que eso está bien que esté en castellano porque es lo que pide el "cliente" y se tieneq ue ver en el idioma que te lo pasan
+
+Tener un header dentro de una section es medio ilógico, si es un header es un header de toda la página o la sección, no es que en tu caso tenés una sección con un header/body/footer dentro sino que es el header general de toda tu página por lo que no debería estar dentro, semánticamente no tiene mucho sentido
+
+mi lógica es siempre algo por éstas líneas:
+```
+body
+	nav
+	header
+	main
+		section/article
+		section/article
+		section/article
+	footer
+```
+obvio que depende del caso pero bueno, se evalúa
+
+la clase h1__linethrough tiene 2 problemas, primero que la estás atando a usarla en un h1 y segundo que no tenés una clase h1 padre, entonces estás seleccionado un Element de un Block que no está definido
+
+si querés entiendo que podés tener clases utilitarias en BEM, podrías tener una clase `linethrough` y que esté todo bien
+
+en el caso de ese bloque si se va a llamar inicio la sección directamente le pondría `inicio` (definí si inglés o castellano antes) y al resto
+`inicio__header`
+`inicio__body`
+
+teniendo en cuenta que el header ya no va a estar dentro del header te debería quedar con menos marcado y más limpio como lo que escribí arriba, menos niveles/capas
+
+Otra cosa es la convención de naming, por lo general se usa kebab-case para CSS y  camelCase para JS y código, pero queda en vos, como toda convención no es obligatoria pero SI tiene que haber consistencia entre el mismo código, si vas a usar BEM la metodología indica usar kebab para palabras dentro del mismo nivel:
+
+`bloque-fer__elemento-fer--modificador-fer`
+
+se escribe `secondary` :)
+
+Es raro tener un modificador de una clase que no estás aplicando
+debería ser episodios__title episodios__title--secondary
+pero eso únicamente en el caso que tengas más de un episodios__title, sino lo metes directamente en la misma clase, la joda es la reutilización sino hacelo unico y listo
+
+otro ej:
+```
+nosotros
+nosotros__img
+nosotros__content
+nosotros__content__title
+nosotros__content__text
+```
+
+Por qué usar 2 elementos P si van a ser iguales? yo pondría uno o 2 `<br>` si querés forzar un line break o sino un <span> dentro del P y ahí dedse css metes magia
+
+BIEN la semántica/división de secciones (no lo pasé por validador igual pero se ve bastante bien)
+
+El footer va fuera del main tmb
+
+BIEN escapando caracteres especiales (&copy;) 
+
+Agregale a los links del footer un `rel="noopener noreferrer"`, es buena práctica
+
+A nivel CSS yo te diría que si vas a hacer comments por secciones lo apliques en todo (una que sea resets, element styles, sections, etc)
+
+Classes styling no me dice mucho, en css todo son clases básicamente salvo los selectores de elemento, apuntaría a describir qué tipo de sección o elemento o marcar cómo estás estructurando el código
+
+Tenes una sección breakpoints pero tenés en la línea 167 un breakpoint 
+y por qué carajo los 2 breakpoints tienen 1px de diferencia???? unificá, se tiene que poder resolver esa diferencia
+Uno de los 2 es max-width 167 px, si vas a tener un min-width 168 el primero está al pedo porque si estás haciendo mobile first se da a entender que va a ir de 0 hasta el primer breakpoint que pongas que sería un min-width porque va de ese punto en adelante. Sacá el max-width a la bosta
+
+Te quedó lindo y flat el CSS por intentar aplicar BEM, eso me copa, no tenés quilombo de especificidad ni bardos de ese estilo :ok: bien ahí
+
+te recomiendo empezar a usar REM cuanto antes en vez de PX como unidad, a nivel accesibilidad si un usuario setea la fuente de su navegador por fuera del default de 16px no se les debería romper, si seteas medidas en PX estás fijando un tamaño y 100% asegurado se va a romper la página, con REM no debería o debería pasar menos
+
+FORMATEA EL CODIGO HIJO DE PUTA. Hablando en serio, acostumbrate YA a formatear el código, casi me voy a las manos en el laburo con gente que  no formatea el código, bajate prettier y dejalo habilitado para tu vs code formatee on save (ctrl + , y buscá "format on save") y seteá tu default formatter a prettier, después lo configurás a gusto pero hace eso YA
+Por qué? 
+- Te suele corregir errores pelotudos (Te faltó un punto y coma)
+- El código es MUCHO más legible
+- Ordena todo
+- Te despreocupás de todo lo que es tabulado e indentación
+- Si hiciste algo mal te vas a dar cuenta más rápido porque en el momento que no se acomoda solo el código es que tenés algo mal redactado
+Y lo más importante de todo por LEJOS:
+- Git trackea CAMBIOS, si yo me bajo tu código, edito *una sola línea* y lo guardo, me va a acomodar  todo y marcar que cambié TODO el código, si te subo un merge request con ésto no vas a saber qué cosa cambié, porque git va a marcar como que cambió TODO el código entonces ahi se hace imposible, y ni hablar si en equipos tenés diferentes configs de prettier (para eso existe igual un archivo que se llama .prettierc y se setea por proyecto y overridea los settings de preettier locales que tengas, entonces si encuentra ese archivo le da bola a lo que diga ahí, después te paso un ej si te interesa del que usamos en el laburo para el proyecto de ahora) 
+
+Ésto último no puedo hacer el suficiente énfasis, fue la primera discusión fuerte que tuve con el pelotudo del laburo, no me formateaba el puto código y casi lo mato
+
+siguiendo con el review: 
+Tenés dentro del media query del final (linea 341) tenés tagas de elementos al final del bloque ( iframe linea 498 y footer 508) y antes los pusiste al ppio, deberías respetar un orden. Por lo general es de más general a más eespecífico:
+Resets > Genéricos > Elementos > Objetos/componentes > utilities (clases utilitarias y overrides) 
+
+Ésto último es básicamente ITCSS.
+
+
+
+Ojo con repetir estilos entre clases, si ya lo definiste en las clases de mobile no hace falta volver a ponerlo en el query, es difícil quizás al principio acostumbrarse y se nota que eso pasa cuando copias todo el bloque lo pegas y modificás lo que necesitas (un clásico) pero es importante sacar las líneaes repetidas para reducir el código
+
+Otra cosa clave, acostumbrate a usar shorthands para propiedadees de css:
+`grid-template-columns/rows` se puede resumir en `grid-template`
+`grid-column-gap` y `grid-row-gap` se resume en `gap` 
+
+éstas huevadas te ahorran tiempo a la larga y código, mucho código
+
+ésto es 0 necesario y 100% opcional pero yo intento (intento, cuando puedo) hacerlo, que es mantener una jerarquía de cómo escribo una clase de CSS desde lo más "modificante"a lo más "cosmético"
+leasé algo tipo
+position > display > flex/whatever > width/height > z-index > margin/padding > borders > color/background-color > etc
+
+a veces me ayuda a buscar más rápido cuando tenés clases con bocha de cosas y además es ordenado
+
+
+a nivel maquetado en general lo veo bien, se rompe un poco (850px ponele) pero viene bien, no me aceurdo si el maquetado era asi y estoy cansado como para abrir el diseño que te pasan para comparar, lo que tepuedo decir a simple vista (y chequealo contra el diseño porque quizás lo recuerdo mal yo) es:
+- El menu en mobile se ve muy pequeño
+- La separación entre iframes en mobile es poca
+- La distancia entre el botón de conocé más al principio y la barra azul la veo poca
+- Si la pantalla se va de tamaño a algo grande tené selementos que se te van del centro (navbar, header, grilla de fotos de científicas, footer), yo haría una clase contenedora que tenga un maxwidth cosa que limite el contenido para que en vistas tipo 4K no se te deforme al recarajo todo
+- Tenes un pequeño overflow en el eje X en vista mobile (340px)
+- Si podés más a futuro implementá animaciones para que sea un poquiiito más interactiva la página, un detalle uqe suma puntines
+
