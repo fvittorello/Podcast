@@ -138,3 +138,9 @@ a nivel maquetado en general lo veo bien, se rompe un poco (850px ponele) pero v
 - Tenes un pequeño overflow en el eje X en vista mobile (340px)
 - Si podés más a futuro implementá animaciones para que sea un poquiiito más interactiva la página, un detalle uqe suma puntines
 
+
+// Posibles agregados
+
+html {
+	scroll-behavior: smooth;
+}
